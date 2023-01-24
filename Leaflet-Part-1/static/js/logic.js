@@ -72,7 +72,7 @@ d3.json(url).then(data => {
         var magnitude = properties.mag;
 
         // Current time
-        var time = moment(properties.time);
+        // var time = moment(properties.time);
 
         // Create markers
         circles = L.circleMarker([latitude, longitude], {
@@ -82,7 +82,7 @@ d3.json(url).then(data => {
             opactiy: 1,
             fillOpacity: 1,
             radius: sizeCircle(magnitude)
-        }).bindPopup(`<h3>${place}</h3><br/>Magnitude: ${magnitude}<br/>Depth: ${depth} km<br>Time: ${time}`).addTo(myMap);
+        }).bindPopup(`<h3>${place}</h3><br/>Magnitude: ${magnitude}<br/>Depth: ${depth}`).addTo(myMap);
 
         // console.log(coordinates);
 
@@ -125,3 +125,4 @@ d3.json(url).then(data => {
     // Add the legend & the info title to the map
     legend.addTo(myMap);
     info.addTo(myMap);
+})
